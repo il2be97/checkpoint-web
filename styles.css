@@ -278,3 +278,14 @@ details p { color: var(--muted); padding-bottom: 6px; }
 .legal__summary { background: var(--card); border: 1px solid rgba(71, 85, 105, .35); border-left: 3px solid var(--primary); border-radius: 14px; padding: 18px 22px; margin: 28px 0 8px; }
 .legal__summary b { display: block; margin-bottom: 6px; }
 .legal__summary p { margin: 0; }
+
+/* Support */
+.contact { background: var(--card); border: 1px solid rgba(71, 85, 105, .35); border-radius: var(--radius); padding: 24px; margin: 28px 0 8px; }
+.contact__label { font-family: var(--pixel); font-size: .8rem; color: var(--primary-text); }
+.legal .contact__email { display: block; font-size: clamp(1.15rem, 4vw, 1.5rem); font-weight: 700; color: var(--text); text-decoration: none; margin: 4px 0 18px; word-break: break-all; }
+.contact__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.contact__actions .btn { font: inherit; font-weight: 700; border: 0; cursor: pointer; text-decoration: none; }
+.legal .contact__actions .btn { color: #fff; }
+.legal .contact__actions .btn--ghost { color: var(--text-2); border: 1px solid var(--line); }
+.contact__hint { margin: 14px 0 0; }
+.legal details:first-of-type { margin-top: 16px; }

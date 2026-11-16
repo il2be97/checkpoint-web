@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Checkpoint</title>
+  <meta name="description" content="Get help with Checkpoint. Contact us at checkpoint.todo@gmail.com.">
+  <meta name="theme-color" content="#0F172A">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="index.html"><span class="brand__icon"><img src="assets/img/flame.svg" alt=""></span><span>Checkpoint</span></a>
+    <nav class="legal-nav" aria-label="Help">
+      <a href="support.html" aria-current="page">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap narrow legal">
+  <p class="eyebrow">need a hand?</p>
+  <h1>Support</h1>
+  <p>Found a bug, have an idea, or need help with your quests? Write to us — we read every message.</p>
+
+  <div class="contact">
+    <span class="contact__label">Email</span>
+    <a class="contact__email" href="mailto:checkpoint.todo@gmail.com?subject=Checkpoint%20support">checkpoint.todo@gmail.com</a>
+    <div class="contact__actions">
+      <button class="btn" type="button" id="copy">Copy email</button>
+      <a class="btn btn--ghost" href="mailto:checkpoint.todo@gmail.com?subject=Checkpoint%20support">Open mail app</a>
+    </div>
+    <p class="contact__hint dim small" id="copy-status" aria-live="polite">Tip: include your iPhone model and iOS version if you're reporting a bug.</p>
+  </div>
+
+  <h2>Common questions</h2>
+  <details>
+    <summary>How do I restore my purchases?</summary>
+    <p>Open Checkpoint, go to the purchase screen and tap “Restore Purchases”. Make sure you're signed in with the same Apple ID you used to buy.</p>
+  </details>
+  <details>
+    <summary>How do I cancel a subscription?</summary>
+    <p>Open iPhone Settings → your name → Subscriptions → Checkpoint, then tap Cancel Subscription. You keep access until the end of the current period.</p>
+  </details>
+  <details>
+    <summary>How do I request a refund?</summary>
+    <p>All payments are handled by Apple. Request a refund at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+  </details>
+  <details>
+    <summary>I got a new phone. Can I move my progress?</summary>
+    <p>Your data is stored on your device. If you restore your new iPhone from an iCloud or computer backup of the old one, your habits and progress come with it.</p>
+  </details>
+  <details>
+    <summary>Reminders don't show up</summary>
+    <p>Check that notifications are allowed for Checkpoint in iPhone Settings → Notifications → Checkpoint, and that Focus mode isn't silencing them.</p>
+  </details>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="brand" href="index.html"><span class="brand__icon"><img src="assets/img/flame.svg" alt=""></span>Checkpoint</a>
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const email = "checkpoint.todo@gmail.com";
+  const status = document.getElementById("copy-status");
+  const btn = document.getElementById("copy");
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      const t = document.createElement("textarea");
+      t.value = email; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); } catch {}
+      t.remove();
+    }
+    btn.textContent = "Copied ✓";
+    status.textContent = "Email copied — paste it into any mail app.";
+    setTimeout(() => { btn.textContent = "Copy email"; }, 2000);
+  });
+</script>
+</body>
+</html>
